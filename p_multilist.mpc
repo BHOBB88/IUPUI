@@ -1,0 +1,23 @@
+CC = g++
+CFLAGS = -g -Wall
+
+p_multilist: main.o Node.o List.o
+	$(CC) $(CFLAGS) main.o Node.o List.o -o p_ multilist
+
+main.o: main.cpp Node.h List.h
+	$(CC) $(CFLAGS) -c main.cpp
+
+Node.o: Node.cpp Node.h List.h
+	$(CC) $(CFLANGS) -c Node.cpp
+
+List.o: List.cpp List.h Node.h
+	$(CC) $(CFLANG) -c List.cpp
+
+clean:
+	rm *.o
+	rm p_multilist
+
+run: p_multilist
+	./p_multilist
+
+
